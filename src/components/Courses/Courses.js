@@ -6,6 +6,7 @@ import Course from '../Course/Course';
 const Courses = (props) => {
     const { handleEnrol } = props;
     const [courses] = useCourses();
+    console.log(courses)
 
     return (
         <div>
@@ -13,7 +14,7 @@ const Courses = (props) => {
             <hr className="w-3/4 mx-auto" />
             <div className="mx-16 my-8 grid sm:grid-cols-1 md:grid-cols-3 gap-16">
                 {
-                    courses.map(course => <Course handleEnrol={handleEnrol} key={courses.id} course={course}></Course>)
+                    courses.map(course => <Course handleEnrol={handleEnrol} key={course.id} course={course}></Course>)
                 }
             </div>
         </div>

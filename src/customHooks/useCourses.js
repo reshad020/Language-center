@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 const useCourses = () => {
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        fetch('fake_data.json')
+        fetch('http://localhost:5000/courses')
             .then(res => res.json())
             .then(data => setCourses(data))
     }, [])
+    console.log(courses);
     return [courses, setCourses];
 }
 

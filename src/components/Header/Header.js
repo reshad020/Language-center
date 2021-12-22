@@ -1,7 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import useFirebase from '../../Hooks/useFirebase';
 
 const Header = () => {
+    const {user,logOut} = useFirebase();
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     return (
         <div className="sticky md:w-full top-0">
@@ -62,6 +64,29 @@ const Header = () => {
                                     <span className="ml-2">My Courses</span>
                                 </NavLink>
                             </li>
+                            {
+                                user.email?
+                                <li className="nav-item">
+                                    <NavLink
+                                        className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                                        to="/login"
+                                    >
+                                        <span className="ml-2" onClick={logOut}><img src={user.photoURL} className='mr-4 rounded-full inline' width="24" height="24"></img>Logout</span>
+                                    </NavLink>
+                                </li>
+                                :
+                                <li className="nav-item">
+                                    <NavLink
+                                        className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                                        to="/login"
+                                    >
+                                        <span className="ml-2">Login</span>
+                                    </NavLink>
+                                </li>
+
+
+                            }
+                            
                         </ul>
                     </div>
                 </div>

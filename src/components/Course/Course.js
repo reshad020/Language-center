@@ -1,8 +1,9 @@
 import React from 'react';
 import Rating from 'react-rating';
+import { NavLink } from 'react-router-dom';
 
 const Course = (props) => {
-    const { language, details, picture, cost, rating, lesson, id } = props.course;
+    const { language, details, picture, cost, rating, lesson, id,_id } = props.course;
     const { handleEnrol } = props;
     return (
         <div className=" p-4 rounded-lg shadow-md hover:shadow-xl">
@@ -33,7 +34,9 @@ const Course = (props) => {
                 </div>
                 {/* button  */}
                 <div className="text-center mt-6">
-                    <button onClick={() => handleEnrol(id)} className="w-44 h-8 bg-pink-600 text-white rounded-md focus:ring-2 focus:bg-pink-800 hover:bg-pink-70000"> Enroll Now</button>
+                    <NavLink to={`/checkout/${_id}`}>
+                    <button  className="w-44 h-8 bg-pink-600 text-white rounded-md focus:ring-2 focus:bg-pink-800 hover:bg-pink-70000"> Enroll Now</button>
+                    </NavLink>
                 </div>
             </div>
         </div>
