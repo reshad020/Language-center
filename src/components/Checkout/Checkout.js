@@ -14,7 +14,7 @@ const Checkout = (props) => {
     
 
     useEffect(() => {
-        fetch(`http://localhost:5000/courses/${id}`)
+        fetch(`https://ancient-cliffs-97923.herokuapp.com/courses/${id}`)
             .then(res => res.json())
             .then(data =>{
                 setEnrolledCourse(data);
