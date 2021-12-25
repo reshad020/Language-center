@@ -35,7 +35,7 @@ const Course = (props) => {
                 {/* button  */}
                 <div className="text-center mt-6">
                     <NavLink to={`/checkout/${_id}`}>
-                    <button  className="w-44 h-8 bg-pink-600 text-white rounded-md focus:ring-2 focus:bg-pink-800 hover:bg-pink-70000"> Enroll Now</button>
+                    <button onClick={() => handleEnrol(id)}  className="w-44 h-8 bg-pink-600 text-white rounded-md focus:ring-2 focus:bg-pink-800 hover:bg-pink-70000"> Enroll Now</button>
                     </NavLink>
                 </div>
             </div>

@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react';
 import useCourses from '../../customHooks/useCourses';
 import Course from '../Course/Course';
 import img from '../../images/language2.png'
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const Home = (props) => {
     const [courses] = useCourses();
     const { handleEnrol } = props;
     const featuredCourses = courses.filter(course => course.rating >= 4);
     return (
+        <>
+            <Header></Header>
         <div className="my-12">
             <div className="md:flex md:mx-16">
                 <article className="my-auto space-y-6">
@@ -24,6 +28,8 @@ const Home = (props) => {
                 }
             </div>
         </div>
+        <Footer></Footer>
+        </>
     );
 };
 

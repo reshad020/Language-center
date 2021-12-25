@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
 const Checkout = (props) => {
+    const { handleEnrol } = props;
     const {id} = useParams();
     const {user} = useFirebase();
     const [enrolledCourse, setEnrolledCourse] = useState({});
@@ -31,7 +32,7 @@ const Checkout = (props) => {
         e.preventDefault();
         console.log(data);
 
-        axios.post('http://localhost:5000/orders',data)
+        axios.post('https://ancient-cliffs-97923.herokuapp.com/orders',data)
         .then(res =>{
             alert("added successfully");
             reset();

@@ -59,9 +59,9 @@ const Header = () => {
                             <li className="nav-item">
                                 <NavLink
                                     className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                                    to="/mycourses"
+                                    to="/dashboard"
                                 >
-                                    <span className="ml-2">My Courses</span>
+                                    <span className="ml-2">Dashboard</span>
                                 </NavLink>
                             </li>
                             {

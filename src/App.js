@@ -15,6 +15,7 @@ import useCourses from './customHooks/useCourses';
 import Login from './components/Login/Login';
 import Checkout from './components/Checkout/Checkout';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import MainBody from './components/Dashboard/MainBody/MainBody';
 
 export const CartContext = React.createContext([]);
 
@@ -34,7 +35,7 @@ function App() {
     <div>
       <CartContext.Provider value={cart}>
         <BrowserRouter>
-          <Header></Header>
+          
           <Switch>
             <Route exact path="/">
               <Home></Home>
@@ -52,17 +53,20 @@ function App() {
               <MyCourses></MyCourses>
             </Route>
             <PrivateRoute path="/checkout/:id" courses={courses}>
-              <Checkout></Checkout>
+              <Checkout handleEnrol={handleEnrol}></Checkout>
             </PrivateRoute>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/dashboard">
+              <MainBody></MainBody>
             </Route>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
           </Switch>
         </BrowserRouter>
-        <Footer></Footer>
+        
       </CartContext.Provider>
     </div>
   );
